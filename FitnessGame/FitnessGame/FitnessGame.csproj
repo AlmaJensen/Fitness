@@ -40,6 +40,7 @@
     <Compile Include="PageModels\AchievementsPageModel.cs" />
     <Compile Include="PageModels\CollectionsPageModel.cs" />
     <Compile Include="PageModels\HomePageModel.cs" />
+    <Compile Include="PageModels\NavCommands.cs" />
     <Compile Include="PageModels\StatsPageModel.cs" />
     <Compile Include="PageModels\StorePageModel.cs" />
     <Compile Include="Pages\AchievementsPage.xaml.cs">

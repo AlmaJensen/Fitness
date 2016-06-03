@@ -12,6 +12,7 @@ namespace FitnessGame.Pages
     {
         public CollectionsPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
     }

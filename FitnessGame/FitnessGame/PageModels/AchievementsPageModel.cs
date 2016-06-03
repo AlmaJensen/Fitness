@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace FitnessGame.PageModels
 {
     [ImplementPropertyChanged]
-    public class AchievementsPageModel : FreshBasePageModel
+    public class AchievementsPageModel : NavCommands
     {
     }
 }

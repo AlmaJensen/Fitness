@@ -55,7 +55,8 @@
     <StackLayout Orientation="Horizontal">
       <Button Text="Watch (1/5)" />
     </StackLayout>
-    <Grid>
+    <BoxView VerticalOptions="FillAndExpand" BackgroundColor="Transparent" />
+    <Grid VerticalOptions="End">
       <Grid.RowDefinitions>
         <RowDefinition />
       </Grid.RowDefinitions>
@@ -66,11 +67,31 @@
         <ColumnDefinition />
         <ColumnDefinition />
       </Grid.ColumnDefinitions>
-      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.trophy.jpg}"/>
-      <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.shopping.png}"/>
-      <Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.collection.jpg}"/>
-      <Image Grid.Row="0" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.stats.png}"/>
-      <Image Grid.Row="0" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.home.png}"/>
+      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.trophy.jpg}">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding AchievementsTapped}" />
+        </Image.GestureRecognizers>
+      </Image>
+      <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.shopping.png}">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding StoreTapped}" />
+        </Image.GestureRecognizers>
+      </Image>
+      <Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.collection.jpg}">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding CollectionTapped}" />
+        </Image.GestureRecognizers>
+      </Image>
+      <Image Grid.Row="0" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.stats.png}">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding StatsTapped}" />
+        </Image.GestureRecognizers>
+      </Image>
+      <Image Grid.Row="0" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.home.png}">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding HomeTapped}" />
+        </Image.GestureRecognizers>
+      </Image>
     </Grid>
   </StackLayout>
 </ContentPage>
