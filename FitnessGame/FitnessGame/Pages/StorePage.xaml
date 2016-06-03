@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FitnessGame;assembly=FitnessGame"
+             x:Class="FitnessGame.Pages.StorePage">
+  <StackLayout VerticalOptions="FillAndExpand">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.ruby.jpg}"/>
+      <Label Text="80" Grid.Row="0" Grid.Column="1" />
+      <Label Text="$6,580,000" />
+    </Grid>
+    <Label Text="Achievements" />
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Walk 5,000 steps in a day"/>
+      <Frame BackgroundColor="Aqua">
+        <Label Text="$10,000" />
+      </Frame>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Walk 10,000 steps in a day"/>
+      <Frame BackgroundColor="Aqua">
+        <Label Text="$100,000" />
+      </Frame>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Walk 10,000 steps in a day"/>
+      <Frame BackgroundColor="Aqua">
+        <Label Text="$100,000" />
+      </Frame>
+    </StackLayout>
+    <Label Text="Weekly Achievement (3/7)" />
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Get all 20 tiles every day for a week"/>
+      <Frame BackgroundColor="Aqua">
+        <Label Text="? Rare Item" />
+      </Frame>
+    </StackLayout>
+    <Label Text="4 Weeks Achievement (3/4)" />
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Get the weekly achievement 4 weeks in a ros"/>
+      <Frame BackgroundColor="Aqua">
+        <Label Text="? Ultra Rare Item" />
+      </Frame>
+    </StackLayout>
+    <BoxView HeightRequest="10" BackgroundColor="Transparent" />
+    <BoxView VerticalOptions="EndAndExpand" Color="Transparent"/>
+    <Grid VerticalOptions="End">
+      <Grid.RowDefinitions>
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.trophy.jpg}"/>
+      <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.shopping.png}"/>
+      <Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.collection.jpg}"/>
+      <Image Grid.Row="0" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.stats.png}"/>
+      <Image Grid.Row="0" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.home.png}"/>
+    </Grid>
+  </StackLayout>
+</ContentPage>

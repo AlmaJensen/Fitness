@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FitnessGame;assembly=FitnessGame"
+             x:Class="FitnessGame.Pages.HomePage">
+  <StackLayout VerticalOptions="FillAndExpand">
+    <Label Text="$6,580,000" HorizontalOptions="Center" />
+    <Image Source="{local:ImageResource FitnessGame.images.boy.png}" />
+    <Image></Image>
+    <Label Text="Available tile searches (6/12)"></Label>
+    <Label Text="Turn over a tile every 500 steps"></Label>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="0" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="0" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="1" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="1" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="1" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="1" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="1" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="2" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="2" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="2" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="2" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="2" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="3" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="3" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="3" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="3" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="3" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="4" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="4" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="4" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="4" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+      <Image Grid.Row="4" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}"/>
+    </Grid>
+    <Label Text="Watch an add for one free tile search"></Label>
+    <StackLayout Orientation="Horizontal">
+      <Button Text="Watch (1/5)" />
+    </StackLayout>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.trophy.jpg}"/>
+      <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.shopping.png}"/>
+      <Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.collection.jpg}"/>
+      <Image Grid.Row="0" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.stats.png}"/>
+      <Image Grid.Row="0" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.home.png}"/>
+    </Grid>
+  </StackLayout>
+</ContentPage>
