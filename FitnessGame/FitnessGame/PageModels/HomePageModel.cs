@@ -1,4 +1,5 @@
-﻿using FreshMvvm;
+﻿using FitnessGame.Interfaces;
+using FreshMvvm;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,17 @@ namespace FitnessGame.PageModels
             base.Init(initData);
         }
 
-        
 
+        public Command StarPedometer
+        {
+            get
+            {
+                return new Command(async () => {
+                    var ped = Xamarin.Forms.DependencyService.Get<IStepSensor>();
+                    ped.Start();
+                    //await CoreMethods.PushPageModel<CollectionsPageModel>();
+                });
+            }
+        }
     }
 }
