@@ -9,7 +9,7 @@
     <Image></Image>
     <Label Text="Available tile searches (6/12)"></Label>
     <Label Text="Turn over a tile every 500 steps"></Label>
-    <Button Command="StartPedometer" Text="Start Pedometer" />
+    <Button Command="{Binding StartPedometer}" Text="Start Pedometer" />
     <Grid>
       <Grid.RowDefinitions>
         <RowDefinition />

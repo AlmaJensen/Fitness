@@ -20,7 +20,7 @@ namespace FitnessGame.PageModels
         }
 
 
-        public Command StarPedometer
+        public Command StartPedometer
         {
             get
             {
