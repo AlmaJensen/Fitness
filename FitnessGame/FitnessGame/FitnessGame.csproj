@@ -36,10 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="DataModels\Collections.cs" />
-    <Compile Include="DataModels\DailyTiles.cs" />
+    <Compile Include="DataModels\Daillies.cs" />
     <Compile Include="DataModels\PlayerInfo.cs" />
-    <Compile Include="DataModels\StoreOptions.cs" />
     <Compile Include="ImageResourceExtension.cs" />
     <Compile Include="Interfaces\IStepSensor.cs" />
     <Compile Include="PageModels\AchievementsPageModel.cs" />

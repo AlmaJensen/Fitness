@@ -12,6 +12,8 @@ using Android.Widget;
 using Android.Hardware;
 using FitnessGame.Interfaces;
 using FitnessGame.Droid.Services;
+using Realms;
+using FitnessGame.DataModels;
 
 [assembly: Xamarin.Forms.Dependency(typeof(StepSensorServiceAndroid))]
 namespace FitnessGame.Droid.Services
@@ -30,6 +32,8 @@ namespace FitnessGame.Droid.Services
         //{
 
         //}
+        private PlayerInfo playerData { get; set; }
+        private Realm _realmdb;
         private static String TAG = "StepDetector";
         private float mLimit = 10;
         private float[] mLastValues = new float[3 * 2];
@@ -74,7 +78,7 @@ namespace FitnessGame.Droid.Services
                     if (diff > mLimit)
                     {
                         Console.WriteLine(TAG + "step");
-                        // handle step here
+                        _realmdb.Write(() => { playerData.DailyTasks.StepCount++; });                        
                         mLastMatch = extType;
                     }
                     else
@@ -90,6 +94,9 @@ namespace FitnessGame.Droid.Services
 
         public void Start()
         {
+            _realmdb = Realm.GetInstance();
+            playerData = _realmdb.All<PlayerInfo>().First();
+
             int h = 480; // TODO: remove this constant
             mYOffset = h * 0.5f;
             mScale[0] = -(h * 0.5f * (1.0f / (SensorManager.StandardGravity * 2)));

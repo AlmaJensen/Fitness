@@ -1,4 +1,6 @@
-﻿using FreshMvvm;
+﻿using FitnessGame.DataModels;
+using FreshMvvm;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,22 @@ namespace FitnessGame
     {
         public App()
         {
+            var realm = Realm.GetInstance();
+            var testLoad = realm.All<PlayerInfo>();
+            var info = new PlayerInfo();
+            if (testLoad.Count() == 0)
+            {
+                realm.Write(() => {
+                    info = realm.CreateObject<PlayerInfo>();
+                    info.ID = 34;
+                    info.DailyTasks = new Daillies();
+                    info.DailyTasks.StepCount = 2;
+                });
+                //realm.BeginWrite();
+                
+                //realm.Close();
+            }
+                //
             var home = FreshPageModelResolver.ResolvePageModel<PageModels.HomePageModel>();
             var navigation = new FreshNavigationContainer(home);
             MainPage = navigation;

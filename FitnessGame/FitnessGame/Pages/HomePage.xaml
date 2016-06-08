@@ -5,6 +5,7 @@
              x:Class="FitnessGame.Pages.HomePage">
   <StackLayout VerticalOptions="FillAndExpand">
     <Label Text="$6,580,000" HorizontalOptions="Center" />
+    <Label Text="{Binding PlayerData.DailyTasks.StepCount}" HorizontalOptions="Center" />
     <Image Source="{local:ImageResource FitnessGame.images.boy.png}" />
     <Image></Image>
     <Label Text="Available tile searches (6/12)"></Label>
