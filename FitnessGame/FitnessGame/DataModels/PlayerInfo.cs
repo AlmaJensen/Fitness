@@ -9,13 +9,14 @@ namespace FitnessGame.DataModels
 {
     public class PlayerInfo : RealmObject
     {
-        public PlayerInfo()
-        {
-            DailyTasks = new Daillies();
-        }
-        public double ID { get; set; }
+        [ObjectId]
+        public string ID { get; set; }
+        public DateTimeOffset DateLastRun { get; set; }
         public double MoneyEarned { get; set; }
         public double Rubies { get; set; }
+        public RealmList<FootSteps> Steps { get; } 
         public Daillies DailyTasks { get; set; }
+        public int SearchesAvailable { get; set; }
+        public int SearchesCompleted { get; set; }
     }
 }

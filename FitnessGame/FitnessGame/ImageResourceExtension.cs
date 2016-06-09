@@ -14,7 +14,6 @@ namespace FitnessGame
                 return null;
             var imageSource = ImageSource.FromResource(Source);
             return imageSource;
-
         }
     }
 }

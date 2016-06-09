@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="DataModels\Daillies.cs" />
+    <Compile Include="DataModels\FootSteps.cs" />
     <Compile Include="DataModels\PlayerInfo.cs" />
     <Compile Include="ImageResourceExtension.cs" />
     <Compile Include="Interfaces\IStepSensor.cs" />

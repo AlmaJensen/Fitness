@@ -35,7 +35,7 @@ namespace FitnessGame.Droid.Services
         private PlayerInfo playerData { get; set; }
         private Realm _realmdb;
         private static String TAG = "StepDetector";
-        private float mLimit = 10;
+        private float mLimit = 10; // this is the sensor sensitivity
         private float[] mLastValues = new float[3 * 2];
         private float[] mScale = new float[2];
         private float mYOffset;
@@ -54,48 +54,81 @@ namespace FitnessGame.Droid.Services
 
         public void OnSensorChanged(SensorEvent e)
         {
-            Sensor sensor = e.Sensor;
-            if (sensor.Type == SensorType.Accelerometer)
+            lock (this)
             {
-                int j = 1;
-                float vSum = 0;
-                for (int i = 0; i < 3; i++)
+                Sensor sensor = e.Sensor;
+                if (sensor.Type == SensorType.Accelerometer)
                 {
-                    var ve = mYOffset + e.Values[i] * mScale[j];
-                    vSum += ve;
-                }
-                int k = 0;
-                var v = vSum / 3;
-
-                float direction = (v > mLastValues[k] ? 1 : (v < mLastValues[k] ? -1 : 0));
-                if (direction == -mLastDirections[k])
-                {
-                    // Direction changed
-                    int extType = (direction > 0 ? 0 : 1);
-                    mLastExtremes[extType][k] = mLastValues[k];
-                    float diff = Math.Abs(mLastExtremes[extType][k] - mLastExtremes[1 - extType][k]);
-
-                    if (diff > mLimit)
+                    int j = 1;
+                    float vSum = 0;
+                    for (int i = 0; i < 3; i++)
                     {
-                        Console.WriteLine(TAG + "step");
-                        _realmdb.Write(() => { playerData.DailyTasks.StepCount++; });                        
-                        mLastMatch = extType;
+                        var ve = mYOffset + e.Values[i] * mScale[j];
+                        vSum += ve;
                     }
-                    else
+                    int k = 0;
+                    var v = vSum / 3;
+
+                    float direction = (v > mLastValues[k] ? 1 : (v < mLastValues[k] ? -1 : 0));
+                    if (direction == -mLastDirections[k])
                     {
-                        mLastMatch = -1;
+                        // Direction changed
+                        int extType = (direction > 0 ? 0 : 1);
+                        mLastExtremes[extType][k] = mLastValues[k];
+                        float diff = Math.Abs(mLastExtremes[extType][k] - mLastExtremes[1 - extType][k]);
+
+                        if (diff > mLimit)
+                        {
+                            Console.WriteLine(TAG + "step");
+                            AddStep();
+                            //_realmdb.Write(() => { playerData.DailyTasks.StepCount++; });                        
+                            mLastMatch = extType;
+                        }
+                        else
+                        {
+                            mLastMatch = -1;
+                        }
+                        mLastDiff[k] = diff;
                     }
-                    mLastDiff[k] = diff;
+                    mLastDirections[k] = direction;
+                    mLastValues[k] = v;
                 }
-                mLastDirections[k] = direction;
-                mLastValues[k] = v;
+            }           
+        }
+        private void AddStep()
+        {
+            playerData = _realmdb.All<PlayerInfo>().First();
+            if (playerData.Steps.Count == 0 || playerData.Steps == null)
+            {
+                AddNewDay();
             }
+            else
+            {
+                var stepCounter = playerData.Steps.Where<FootSteps>(x => x.DateOfSteps == DateTime.Today).First();
+                if (stepCounter != null)
+                    _realmdb.Write(() => { stepCounter.UnprocessedStepCount++; });
+                else
+                {
+                    AddNewDay();
+                }
+            }
+        }
+
+        private void AddNewDay()
+        {
+            _realmdb.Write(() =>
+            {
+                var stepCounter = _realmdb.CreateObject<FootSteps>();
+                stepCounter.UnprocessedStepCount = 1;
+                stepCounter.DateOfSteps = DateTime.Today;
+                playerData.Steps.Add(stepCounter);
+            });
         }
 
         public void Start()
         {
             _realmdb = Realm.GetInstance();
-            playerData = _realmdb.All<PlayerInfo>().First();
+            
 
             int h = 480; // TODO: remove this constant
             mYOffset = h * 0.5f;
