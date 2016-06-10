@@ -25,7 +25,7 @@
         <ColumnDefinition />
         <ColumnDefinition />
       </Grid.ColumnDefinitions>
-      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource 1}">
         <Image.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="0"/>
         </Image.GestureRecognizers>
@@ -151,9 +151,9 @@
         </Image.GestureRecognizers>
       </Image>
     </Grid>
-    <Label Text="Watch an add for one free tile search"></Label>
+    <Label Text="Watch an add for one free tile search" HorizontalOptions="Center"  ></Label>
     <StackLayout Orientation="Horizontal">
-      <Button Text="Watch (1/5)" />
+      <Button Text="Watch (1/5)"  HorizontalOptions="Center"/>
     </StackLayout>
     <BoxView VerticalOptions="FillAndExpand" BackgroundColor="Transparent" />
     <Grid VerticalOptions="End">

@@ -12,6 +12,13 @@ namespace FitnessGame
         {
             if (string.IsNullOrWhiteSpace(Source))
                 return null;
+            try
+            {
+                var y = Convert.ToInt64(Source);
+                var x = y;
+            }
+            catch { }
+            
             var imageSource = ImageSource.FromResource(Source);
             return imageSource;
         }

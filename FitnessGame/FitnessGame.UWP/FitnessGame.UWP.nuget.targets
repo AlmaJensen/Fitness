@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ImportGroup>
     <Import Project="$(NuGetPackageRoot)\Fody\1.29.4\build\dotnet\Fody.targets" Condition="Exists('$(NuGetPackageRoot)\Fody\1.29.4\build\dotnet\Fody.targets')" />
-    <Import Project="$(NuGetPackageRoot)\Realm\0.75.0\build\Realm.targets" Condition="Exists('$(NuGetPackageRoot)\Realm\0.75.0\build\Realm.targets')" />
+    <Import Project="$(NuGetPackageRoot)\Realm\0.76.0\build\Realm.targets" Condition="Exists('$(NuGetPackageRoot)\Realm\0.76.0\build\Realm.targets')" />
     <Import Project="$(NuGetPackageRoot)\Xamarin.Forms\2.3.0.46-pre3\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('$(NuGetPackageRoot)\Xamarin.Forms\2.3.0.46-pre3\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
     <Import Project="$(NuGetPackageRoot)\Xamarin.Forms.CarouselView\2.3.0-pre1\build\win81\Xamarin.Forms.CarouselView.targets" Condition="Exists('$(NuGetPackageRoot)\Xamarin.Forms.CarouselView\2.3.0-pre1\build\win81\Xamarin.Forms.CarouselView.targets')" />
   </ImportGroup>
