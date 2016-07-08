@@ -2,4 +2,5 @@
 <Weavers>
 	<RealmWeaver/>
   <PropertyChanged/>
+  <RealmWeaver/>
 </Weavers>

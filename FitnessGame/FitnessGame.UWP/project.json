@@ -1,10 +1,11 @@
 ﻿{
   "dependencies": {
+    "DotNetCross.Memory.Unsafe": "0.2.2",
     "FreshEssentials": "2.0.1",
     "FreshMvvm": "2.1.0",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
-    "Realm": "0.76.0",
-    "Xamarin.Forms": "2.3.0.46-pre3",
+    "Realm": "0.76.1",
+    "Xamarin.Forms": "2.3.0.107",
     "Xamarin.Forms.CarouselView": "2.3.0-pre1"
   },
   "frameworks": {
