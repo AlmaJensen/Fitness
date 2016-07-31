@@ -28,6 +28,9 @@ namespace FitnessGame.PageModels
             _realmdb.RealmChanged += _realmdb_RealmChanged;
 
             StartStepCounter();
+
+            //var f = new Frame();
+            //f.OutlineColor = Color.Purple
         }
 
         private void _realmdb_RealmChanged(object sender, EventArgs e)
@@ -45,6 +48,7 @@ namespace FitnessGame.PageModels
             var pastDays = PlayerData.Steps.Where(x => x.DateOfSteps != DateTime.Today);
             if(pastDays.Count() > 0)
             {
+                var f = new Frame();
                 foreach (var s in pastDays)
                     _realmdb.Write(() => 
                     {

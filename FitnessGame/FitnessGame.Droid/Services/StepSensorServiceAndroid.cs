@@ -18,7 +18,7 @@ using FitnessGame.DataModels;
 [assembly: Xamarin.Forms.Dependency(typeof(StepSensorServiceAndroid))]
 namespace FitnessGame.Droid.Services
 {
-    public class StepSensorServiceAndroid : Activity,  IStepSensor, ISensorEventListener
+    public class StepSensorServiceAndroid : Activity, IStepSensor, ISensorEventListener
     {
         //public IntPtr Handle
         //{
@@ -93,7 +93,7 @@ namespace FitnessGame.Droid.Services
                     mLastDirections[k] = direction;
                     mLastValues[k] = v;
                 }
-            }           
+            }
         }
         private void AddStep()
         {
@@ -104,12 +104,19 @@ namespace FitnessGame.Droid.Services
             }
             else
             {
-                var stepCounter = playerData.Steps.Where<FootSteps>(x => x.DateOfSteps == DateTime.Today).First();
-                if (stepCounter != null)
-                    _realmdb.Write(() => { stepCounter.UnprocessedStepCount++; });
-                else
+                try
+                {  //Sometimes getting an error that sequence contains no elements on app startup
+                    var stepCounter = playerData.Steps.Where<FootSteps>(x => x.DateOfSteps == DateTime.Today).First();
+                    if (stepCounter != null)
+                        _realmdb.Write(() => { stepCounter.UnprocessedStepCount++; });
+                    else
+                    {
+                        AddNewDay();
+                    }
+                }
+                catch
                 {
-                    AddNewDay();
+
                 }
             }
         }
@@ -128,7 +135,7 @@ namespace FitnessGame.Droid.Services
         public void Start()
         {
             _realmdb = Realm.GetInstance();
-            
+
 
             int h = 480; // TODO: remove this constant
             mYOffset = h * 0.5f;

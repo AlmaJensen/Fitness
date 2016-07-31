@@ -2,159 +2,190 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FitnessGame;assembly=FitnessGame"
-             x:Class="FitnessGame.Pages.HomePage">
+             xmlns:effects="clr-namespace:FitnessGame.Effects"
+             x:Class="FitnessGame.Pages.HomePage"
+             BackgroundColor="#182033">
   <StackLayout VerticalOptions="FillAndExpand">
-    <Label Text="{Binding PlayerData.MoneyEarned, StringFormat='{0:C0}'}" HorizontalOptions="Center" FontSize="Large"/>
-    <Image Source="{local:ImageResource FitnessGame.images.boy.png}" />
-    <Image></Image>
-    <Label Text="{Binding PlayerData.SearchesAvailable, StringFormat='Available Tile Searches ({0}/25)'}" HorizontalOptions="Center"  />
-    <Label Text="Turn over a tile every 500 steps" HorizontalOptions="Center" ></Label>
-    <Grid>
+    <Grid Padding="6">
       <Grid.RowDefinitions>
-        <RowDefinition />
-        <RowDefinition />
-        <RowDefinition />
-        <RowDefinition />
-        <RowDefinition />
         <RowDefinition />
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition />
         <ColumnDefinition />
         <ColumnDefinition />
-        <ColumnDefinition />
-        <ColumnDefinition />
       </Grid.ColumnDefinitions>
-      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource 1}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="0"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="1"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="2"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="0" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="3"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="0" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="4"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="1" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="5"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="1" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="6"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="1" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="7"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="1" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="8"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="1" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="9"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="2" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="10"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="2" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="11"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="2" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="12"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="2" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="13"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="2" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="14"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="3" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="15"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="3" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="16"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="3" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="17"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="3" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="18"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="3" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="19"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="4" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="20"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="4" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="21"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="4" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="22"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="4" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="23"/>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="4" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="24"/>
-        </Image.GestureRecognizers>
-      </Image>
+      <Frame Grid.Row="0" Grid.Column="1" OutlineColor="#1E273D" BackgroundColor="#0D1125" HeightRequest="25" Padding="1" TranslationX="-60">
+        <Label Text="{Binding PlayerData.MoneyEarned, StringFormat='{0:C0}'}" HorizontalOptions="Center" FontSize="Large" TextColor="#BD971D">
+          <Label.Effects>
+            <effects:AlienFont />
+          </Label.Effects>
+        </Label>
+      </Frame>
+      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.coin.png}" HeightRequest="20" WidthRequest="20"/>
     </Grid>
-    <Label Text="Watch an add for one free tile search" HorizontalOptions="Center"  ></Label>
-    <StackLayout Orientation="Horizontal">
-      <Button Text="Watch (1/5)"  HorizontalOptions="Center"/>
-    </StackLayout>
+    <Frame OutlineColor="#48284B" BackgroundColor="#372C55" Margin="5" Padding="2">
+      <StackLayout Padding="8">
+        <Image Source="{local:ImageResource FitnessGame.images.boy.png}" />
+        <Label Text="{Binding PlayerData.SearchesAvailable, StringFormat='Available Tile Searches ({0}/25)'}" HorizontalOptions="Center" TextColor="#BAA8BA"/>
+        <Label Text="Turn over a tile every 500 steps" HorizontalOptions="Center" TextColor="#261932"></Label>
+        <Frame OutlineColor="#B0ABB4" BackgroundColor="#DEDEDE" Padding="5" HasShadow="True">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition />
+              <ColumnDefinition />
+              <ColumnDefinition />
+              <ColumnDefinition />
+              <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource 1}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="0"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="1"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="2"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="0" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="3"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="0" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="4"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="1" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="5"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="1" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="6"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="1" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="7"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="1" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="8"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="1" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="9"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="2" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="10"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="2" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="11"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="2" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="12"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="2" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="13"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="2" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="14"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="3" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="15"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="3" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="16"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="3" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="17"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="3" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="18"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="3" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="19"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="4" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="20"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="4" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="21"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="4" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="22"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="4" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="23"/>
+              </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="4" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.generic.jpg}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TileTapped}" CommandParameter="24"/>
+              </Image.GestureRecognizers>
+            </Image>
+          </Grid>
+        </Frame>
+      </StackLayout>
+    </Frame>
+    
+    
+    <Label Text="Watch an add for one free tile search" HorizontalOptions="Center"  TextColor="#4A6A99"></Label>
+
+    <Frame HorizontalOptions="Center" Padding="4" OutlineColor="#1A2E7A" BackgroundColor="#1D1F51">
+      <StackLayout Orientation="Horizontal">
+        <Button Text="Watch" BorderColor="#3560B5" TextColor="#859ADF" BackgroundColor="#3237B3"/>
+        <Label Text="(1/5)" TextColor="#3C60B0"/>
+      </StackLayout>
+    </Frame>
+    
     <BoxView VerticalOptions="FillAndExpand" BackgroundColor="Transparent" />
     <Grid VerticalOptions="End">
       <Grid.RowDefinitions>

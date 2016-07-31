@@ -39,6 +39,7 @@
     <Compile Include="DataModels\Daillies.cs" />
     <Compile Include="DataModels\FootSteps.cs" />
     <Compile Include="DataModels\PlayerInfo.cs" />
+    <Compile Include="Effects\AlienFont.cs" />
     <Compile Include="ImageResourceExtension.cs" />
     <Compile Include="Interfaces\IStepSensor.cs" />
     <Compile Include="PageModels\AchievementsPageModel.cs" />
@@ -49,6 +50,9 @@
     <Compile Include="PageModels\StorePageModel.cs" />
     <Compile Include="Pages\AchievementsPage.xaml.cs">
       <DependentUpon>AchievementsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Blank.xaml.cs">
+      <DependentUpon>Blank.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CollectionsPage.xaml.cs">
       <DependentUpon>CollectionsPage.xaml</DependentUpon>
@@ -106,7 +110,12 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Blank.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -141,6 +150,7 @@
     <Content Include="FodyWeavers.xml">
       <SubType>Designer</SubType>
     </Content>
+    <EmbeddedResource Include="images\coin.png" />
     <EmbeddedResource Include="images\boy.png" />
     <EmbeddedResource Include="images\generic.jpg" />
     <EmbeddedResource Include="images\home.png" />

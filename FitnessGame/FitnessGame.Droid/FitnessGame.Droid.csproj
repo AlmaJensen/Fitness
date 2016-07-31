@@ -141,6 +141,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Effects\AlienFontAndroid.cs" />
+    <Compile Include="Effects\RoundedFrame.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="Services\StepSensorServiceAndroid.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Effects\Alien-Encounters-Regular.ttf" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
