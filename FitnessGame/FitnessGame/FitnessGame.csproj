@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="DataModels\Daillies.cs" />
+    <Compile Include="DataModels\FlippedTile.cs" />
     <Compile Include="DataModels\FootSteps.cs" />
     <Compile Include="DataModels\PlayerInfo.cs" />
     <Compile Include="Effects\AlienFont.cs" />
@@ -67,6 +67,8 @@
       <DependentUpon>StorePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\RewardGenerator.cs" />
+    <Compile Include="Services\StaticRewards.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -150,6 +152,14 @@
     <Content Include="FodyWeavers.xml">
       <SubType>Designer</SubType>
     </Content>
+    <EmbeddedResource Include="images\homeBtn.png" />
+    <EmbeddedResource Include="images\homeBtnSelected.png" />
+    <EmbeddedResource Include="images\sidewalkGlow.png" />
+    <EmbeddedResource Include="images\storeBtn.png" />
+    <EmbeddedResource Include="images\collectionBtn.png" />
+    <EmbeddedResource Include="images\collectionBtnSelected.png" />
+    <EmbeddedResource Include="images\storeBtnSelected.png" />
+    <Content Include="images\whiteTile.png" />
     <EmbeddedResource Include="images\coin.png" />
     <EmbeddedResource Include="images\boy.png" />
     <EmbeddedResource Include="images\generic.jpg" />

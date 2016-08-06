@@ -150,7 +150,7 @@
     <Compile Include="Services\StepSensorServiceAndroid.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Effects\Alien-Encounters-Regular.ttf" />
+    <AndroidAsset Include="Assets\AlienEncountersRegular.ttf" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -173,6 +173,17 @@
     <Content Include="FodyWeavers.xml">
       <SubType>Designer</SubType>
     </Content>
+    <AndroidResource Include="Resources\drawable-hdpi\whiteTile.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\whiteTile.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\whiteTile.png" />
+    <AndroidResource Include="Resources\drawable\whiteTile.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\generic.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\generic.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\generic.jpg" />
+    <AndroidResource Include="Resources\drawable\generic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Fonts\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

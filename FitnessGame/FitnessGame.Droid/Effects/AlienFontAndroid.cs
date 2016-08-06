@@ -13,7 +13,7 @@ using FitnessGame.Droid.Effects;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Android.Graphics;
-
+[assembly: ResolutionGroupName("Xamarin")]
 [assembly: ExportEffect(typeof(AlienFontAndroid), "AlienFont")]
 namespace FitnessGame.Droid.Effects
 {
@@ -21,12 +21,23 @@ namespace FitnessGame.Droid.Effects
     {
         protected override void OnAttached()
         {
-            var label = Control as Android.Widget.TextView;
-            if (label == null)
+            Typeface font = Typeface.CreateFromAsset(Forms.Context.Assets, "AlienEncountersRegular.ttf");
+            var type = Control.GetType();
+            if (Control.GetType().ToString().Contains("TextView"))
+            {
+                var label = (Control as Android.Widget.TextView).Typeface = font;
                 return;
+            }
+            else if (Control.GetType() == typeof(Android.Widget.Button))
+            {
+                var label = (Control as Android.Widget.Button).Typeface = font;
+                return;
+            }
+            //if (label == null)
+            //    return;
 
-            Typeface font = Typeface.CreateFromAsset(Forms.Context.Assets, "Alien-Encounters-Regular.ttf");
-            label.Typeface = font;
+
+            //label.Typeface = font;
         }
 
         protected override void OnDetached()

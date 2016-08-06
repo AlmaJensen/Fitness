@@ -8,10 +8,10 @@ namespace FitnessGame.Services
 {
     public class StaticRewards
     {
-        //public static List<RewardModel> CommonRewards = new List<RewardModel>
-        //{
-        //    RewardModel{},
+        public static List<RewardModel> CommonRewards = new List<RewardModel>
+        {
+            RewardModel{},
 
-        //};
+        };
     }
 }

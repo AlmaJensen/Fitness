@@ -79,7 +79,7 @@ namespace FitnessGame.Droid.Services
 
                         if (diff > mLimit)
                         {
-                            Console.WriteLine(TAG + "step");
+                            //Console.WriteLine(TAG + "step");
                             AddStep();
                             //_realmdb.Write(() => { playerData.DailyTasks.StepCount++; });                        
                             mLastMatch = extType;
@@ -114,8 +114,10 @@ namespace FitnessGame.Droid.Services
                         AddNewDay();
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
+                    var t = ex; //steps was sometimes still ending up as null hopefully this will fix the issue.
+                    AddNewDay();  // having issue where exception is being thrown when the app has been on a device through to a new day
 
                 }
             }

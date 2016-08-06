@@ -2,28 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FitnessGame;assembly=FitnessGame"
+             xmlns:effects="clr-namespace:FitnessGame.Effects"
              x:Class="FitnessGame.Pages.CollectionsPage">
   <StackLayout VerticalOptions="FillAndExpand">
-    <Grid>
+    <Grid Padding="6">
       <Grid.RowDefinitions>
         <RowDefinition />
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto"/>
-        <ColumnDefinition Width="Auto"/>
-        <ColumnDefinition Width="*"/>
-        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
       </Grid.ColumnDefinitions>
-      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.ruby.jpg}"/>
-      <Label Text="80" Grid.Row="0" Grid.Column="1" />
-      <Label Text="$6,580,000" Grid.Row="0" Grid.Column="3"/>
+      <Frame Grid.Row="0" Grid.Column="1" OutlineColor="#1E273D" BackgroundColor="#0D1125" HeightRequest="25" Padding="1" TranslationX="-60" >
+        <Label Text="{Binding PlayerData.MoneyEarned, StringFormat='{0:C0}'}" HorizontalOptions="Center" FontSize="Large" TextColor="#BD971D">
+          <Label.Effects>
+            <effects:AlienFont />
+          </Label.Effects>
+        </Label>
+      </Frame>
+      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.coin.png}" HeightRequest="20" WidthRequest="20"/>
     </Grid>
-    <Label Text="Collections" />
-    <ListView VerticalOptions="FillAndExpand">
+    <Label Text="Collections" FontSize="Large" HorizontalOptions="Center" TextColor="#A33D91" FontAttributes="Bold">
+      <Label.Effects>
+        <effects:AlienFont />
+      </Label.Effects>
+    </Label>
+    <ListView>
       
     </ListView>
- 
-    <Grid VerticalOptions="End">
+    
+    <BoxView VerticalOptions="FillAndExpand" BackgroundColor="Transparent" />
+    <Grid VerticalOptions="End" BackgroundColor="#0D0F24">
       <Grid.RowDefinitions>
         <RowDefinition />
       </Grid.RowDefinitions>
@@ -34,27 +44,17 @@
         <ColumnDefinition />
         <ColumnDefinition />
       </Grid.ColumnDefinitions>
-      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.trophy.jpg}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding AchievementsTapped}" />
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.shopping.png}">
+      <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.storeBtn.png}">
         <Image.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding StoreTapped}" />
         </Image.GestureRecognizers>
       </Image>
-      <Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.collection.jpg}">
+      <Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.collectionBtnSelected.png}">
         <Image.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding CollectionTapped}" />
         </Image.GestureRecognizers>
       </Image>
-      <Image Grid.Row="0" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.stats.png}">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding StatsTapped}" />
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Grid.Row="0" Grid.Column="4" Source="{local:ImageResource FitnessGame.images.home.png}">
+      <Image Grid.Row="0" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.homeBtn.png}">
         <Image.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding HomeTapped}" />
         </Image.GestureRecognizers>

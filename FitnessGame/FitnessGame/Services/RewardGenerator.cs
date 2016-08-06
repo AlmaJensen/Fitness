@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace FitnessGame.Services
 {
-    class RewardGenerator
+    public class RewardGenerator
     {
+        public string GenerateTileReward()
+        {
+            return "generic.jpg";
+        }
     }
 }

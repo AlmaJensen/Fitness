@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace FitnessGame.DataModels
 {
-    public class Daillies : RealmObject
+    public class FlippedTile : RealmObject
     {
-        public int StepCount { get; set; }
+        public string TileID { get; set; }
+        public string AssociatedImage { get; set; }
     }
 }

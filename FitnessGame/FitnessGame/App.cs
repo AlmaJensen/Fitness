@@ -37,7 +37,6 @@ namespace FitnessGame
                 {
                     var info = realm.CreateObject<PlayerInfo>();
                     info.ID = "34";
-                    info.DailyTasks = new Daillies();
                     info.DateLastRun = DateTime.Today;
                 });
             }

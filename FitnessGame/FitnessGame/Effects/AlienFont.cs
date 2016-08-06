@@ -9,7 +9,7 @@ namespace FitnessGame.Effects
 {
     class AlienFont : RoutingEffect
     {
-        public AlienFont() : base("FitnessGame.AlienFont")
+        public AlienFont() : base("Xamarin.AlienFont")
         {
 
         }

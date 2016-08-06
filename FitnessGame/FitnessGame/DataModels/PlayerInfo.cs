@@ -14,8 +14,8 @@ namespace FitnessGame.DataModels
         public DateTimeOffset DateLastRun { get; set; }
         public double MoneyEarned { get; set; }
         public double Rubies { get; set; }
-        public RealmList<FootSteps> Steps { get; } 
-        public Daillies DailyTasks { get; set; }
+        public RealmList<FootSteps> Steps { get; }
+        public RealmList<FlippedTile> FlippedTiles { get; }
         public int SearchesAvailable { get; set; }
         public int SearchesCompleted { get; set; }
     }

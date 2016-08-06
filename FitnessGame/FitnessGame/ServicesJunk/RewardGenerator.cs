@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace FitnessGame.Services
 {
-    public class StaticRewards
+    class RewardGenerator
     {
-        //public static List<RewardModel> CommonRewards = new List<RewardModel>
-        //{
-        //    RewardModel{},
-
-        //};
     }
 }
