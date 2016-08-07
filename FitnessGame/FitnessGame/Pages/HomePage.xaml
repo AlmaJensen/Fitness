@@ -22,32 +22,33 @@
           </Label.Effects>
         </Label>
       </Frame>
-      <Image Grid.Row="0" Grid.Column="0" Source="{local:ImageResource FitnessGame.images.coin.png}" HeightRequest="20" WidthRequest="20"/>
+      <Image Grid.Row="0" Grid.Column="0" Source="coin.png" HeightRequest="20" WidthRequest="20"/>
     </Grid>
     <Frame OutlineColor="#48284B" BackgroundColor="#372C55" Margin="5" Padding="2">
       <StackLayout Padding="8">
         <Image Source="{local:ImageResource FitnessGame.images.boy.png}" HorizontalOptions="Start" TranslationX="{Binding HeroPosition}"/>
         <StackLayout Orientation="Horizontal">
           <!--<Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}" IsVisible="{Binding Bar1Visible}"/>-->
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-15" IsVisible="{Binding Bar1Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-30" IsVisible="{Binding Bar2Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-45" IsVisible="{Binding Bar3Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-60" IsVisible="{Binding Bar4Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-75" IsVisible="{Binding Bar5Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-90" IsVisible="{Binding Bar6Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-105" IsVisible="{Binding Bar7Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-120" IsVisible="{Binding Bar8Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-135" IsVisible="{Binding Bar9Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-150" IsVisible="{Binding Bar10Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-165" IsVisible="{Binding Bar11Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-180" IsVisible="{Binding Bar12Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-195" IsVisible="{Binding Bar14Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-210" IsVisible="{Binding Bar15Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-225" IsVisible="{Binding Bar16Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-240" IsVisible="{Binding Bar17Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-255" IsVisible="{Binding Bar18Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-270" IsVisible="{Binding Bar19Visible}"/>
-          <Image Source="{local:ImageResource FitnessGame.images.sidewalkGlow.png}"  TranslationX="-285" IsVisible="{Binding Bar20Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="0" IsVisible="{Binding Bar1Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-16" IsVisible="{Binding Bar2Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-32" IsVisible="{Binding Bar3Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-64" IsVisible="{Binding Bar4Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-80" IsVisible="{Binding Bar5Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-96" IsVisible="{Binding Bar6Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-112" IsVisible="{Binding Bar7Visible}"/>
+          <Image Source="sidewalkGlow.png" TranslationX="-128" IsVisible="{Binding Bar8Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-144" IsVisible="{Binding Bar9Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-160" IsVisible="{Binding Bar10Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-176" IsVisible="{Binding Bar11Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-192" IsVisible="{Binding Bar12Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-208" IsVisible="{Binding Bar13Visible}"/>
+          <Image Source="sidewalkGlow.png" TranslationX="-224" IsVisible="{Binding Bar14Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-240" IsVisible="{Binding Bar15Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-256" IsVisible="{Binding Bar16Visible}"/>
+          <Image Source="sidewalkGlow.png" TranslationX="-272" IsVisible="{Binding Bar17Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-288" IsVisible="{Binding Bar18Visible}"/>
+          <Image Source="sidewalkGlow.png" TranslationX="-304" IsVisible="{Binding Bar19Visible}"/>
+          <Image Source="sidewalkGlow.png"  TranslationX="-320" IsVisible="{Binding Bar20Visible}"/>
         </StackLayout>
         <Label Text="{Binding PlayerData.SearchesAvailable, StringFormat='Available Tile Searches ({0}/20)'}" HorizontalOptions="Center" TextColor="#BAA8BA">
           <Label.Effects>
@@ -216,17 +217,17 @@
         <ColumnDefinition />
         <ColumnDefinition />
       </Grid.ColumnDefinitions>
-      <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource FitnessGame.images.storeBtn.png}">
+      <Image Grid.Row="0" Grid.Column="1" Source="storeBtn.png">
         <Image.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding StoreTapped}" />
         </Image.GestureRecognizers>
       </Image>
-      <Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource FitnessGame.images.collectionBtn.png}">
+      <Image Grid.Row="0" Grid.Column="2" Source="collectionBtn.png">
         <Image.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding CollectionTapped}" />
         </Image.GestureRecognizers>
       </Image>
-      <Image Grid.Row="0" Grid.Column="3" Source="{local:ImageResource FitnessGame.images.homeBtnSelected.png}">
+      <Image Grid.Row="0" Grid.Column="3" Source="homeBtnSelected.png">
         <Image.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding HomeTapped}" />
         </Image.GestureRecognizers>
